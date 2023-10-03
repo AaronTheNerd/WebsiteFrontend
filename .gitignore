@@ -1,16 +1,31 @@
-# Created by https://www.toptal.com/developers/gitignore/api/visualstudiocode,angular
-# Edit at https://www.toptal.com/developers/gitignore?templates=visualstudiocode,angular
+# Created by https://www.toptal.com/developers/gitignore/api/angular,visualstudiocode,amplify
+# Edit at https://www.toptal.com/developers/gitignore?templates=angular,visualstudiocode,amplify
+
+### Amplify ###
+# AWS Amplify
+amplify/\#current-cloud-backend
+amplify/.config/local-*
+amplify/mock-data
+amplify/backend/amplify-meta.json
+amplify/backend/awscloudformation
+build/
+dist/
+node_modules/
+aws-exports.js
+awsconfiguration.json
+amplifyconfiguration.json
+amplify-build-config.json
+amplify-gradle-config.json
+amplifyxc.config
 
 ### Angular ###
 ## Angular ##
 # compiled output
-dist/
 tmp/
 app/**/*.js
 app/**/*.js.map
 
 # dependencies
-node_modules/
 bower_components/
 
 # IDEs and editors
@@ -52,4 +67,4 @@ e2e/*.map
 .history
 .ionide
 
-# End of https://www.toptal.com/developers/gitignore/api/visualstudiocode,angular
+# End of https://www.toptal.com/developers/gitignore/api/angular,visualstudiocode,amplify
