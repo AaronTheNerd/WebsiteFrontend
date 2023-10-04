@@ -1,0 +1,25 @@
+enum LanguageEnum {
+  CPP
+  C
+  PY
+  JS
+  JAVA
+  MATLAB
+  ARDUINO
+  VERILOG
+}
+
+type ProjectModel @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  school: Boolean!
+  languages: [LanguageEnum]
+  description: String!
+  content: AWSJSON!
+  tags: [String]
+  modified: AWSDateTime!
+  created: AWSDateTime!
+  gitLink: String
+  thumbnails: [String]
+  favorite: Boolean
+}
