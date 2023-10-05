@@ -1,0 +1,18 @@
+<table class="table table-dark table-striped text-light">
+  <thead>
+    <tr>
+      <th scope="col">Command</th>
+      <th scope="col">Description</th>
+      <th scope="col">Example</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let command of commands">
+      <th scope="row" [innerHTML]="command.command"></th>
+      <td [innerHTML]="command.description"></td>
+      <td>
+        <code>{{ command.example }}</code>
+      </td>
+    </tr>
+  </tbody>
+</table>

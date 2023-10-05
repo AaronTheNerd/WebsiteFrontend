@@ -1,0 +1,26 @@
+@import "../../assets/styles/variables.scss";
+
+.favorite-project {
+  border-left: 15px solid $accent;
+}
+
+#filter-div {
+  width: fit-content;
+}
+
+#filter-div ul {
+  list-style-type: none;
+  padding-left: 0;
+  padding-bottom: 0;
+  height: 25vh;
+  overflow-y: scroll;
+}
+
+#filter-div li:hover {
+  background-color: var(--bs-gray-300);
+}
+
+.project-row:hover {
+  background-color: var(--bs-gray-300);
+  cursor: pointer;
+}

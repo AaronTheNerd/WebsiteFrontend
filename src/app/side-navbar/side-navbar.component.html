@@ -1,0 +1,28 @@
+<div class="navbar-main d-flex flex-column flex-shrink-0 text-light bg-darker">
+  <ul
+    *ngIf="isNotDetailURL$ | async; else back"
+    class="nav nav-pills nav-flush flex-column my-auto">
+    <li *ngFor="let route of routes">
+      <a
+        [routerLink]="route.path"
+        class="nav-link d-flex"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [title]="route.label">
+        <mat-icon
+          width="40"
+          height="32"
+          class="m-auto"
+          aria-hidden="false"
+          [innerHTML]="route.icon"></mat-icon>
+      </a>
+    </li>
+  </ul>
+</div>
+<ng-template #back>
+  <a routerLink="/projects" class="nav-link d-flex" title="Projects">
+    <mat-icon width="40" height="32" class="m-auto" aria-hidden="false">
+      arrow_back
+    </mat-icon>
+  </a>
+</ng-template>

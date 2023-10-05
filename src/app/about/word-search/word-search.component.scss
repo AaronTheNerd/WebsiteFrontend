@@ -1,0 +1,40 @@
+@import "../../../assets/styles/variables.scss";
+
+span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+.word-search-wrapper {
+  width: fit-content;
+}
+
+.tall {
+  position: absolute;
+  z-index: 50;
+  cursor: crosshair;
+}
+
+#word-bank {
+  background-color: $primary;
+  max-height: 16 * 32px;
+  overflow-y: scroll;
+}
+
+.word-bank-word {
+  padding: 1em;
+}
+
+.highlight {
+  z-index: 25;
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+.easter-egg {
+  background-color: rgba(0, 0, 255, 0.5);
+}

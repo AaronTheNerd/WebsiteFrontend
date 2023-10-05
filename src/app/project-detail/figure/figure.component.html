@@ -1,0 +1,9 @@
+<div class="figure ms-3">
+  <div class="figure-content bg-darker p-3" #content>
+    <ng-content></ng-content>
+  </div>
+  <div
+    [innerText]="title"
+    [ngStyle]="{ 'width.px': content.offsetWidth }"
+    class="p-2 bg-primary"></div>
+</div>

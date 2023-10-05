@@ -1,0 +1,21 @@
+<div class="article-content project-content">
+  <div class="project-page">
+    <p id="top" class="display-5 mb-0" [innerText]="project.title"></p>
+    <hr class="hr mt-0" />
+    <div class="row">
+      <div class="col">
+        <p [innerHTML]="project.description"></p>
+        <br />
+        <app-github-card
+          *ngIf="project.gitLink"
+          [link]="project.gitLink"></app-github-card>
+      </div>
+      <div class="col-md-auto">
+        <app-table-of-contents></app-table-of-contents>
+      </div>
+    </div>
+    <div id="project-detail">
+      <ng-template appProjectDetail [project]="project"></ng-template>
+    </div>
+  </div>
+</div>

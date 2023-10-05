@@ -1,0 +1,16 @@
+@import "../../../assets/styles/variables.scss";
+
+table {
+  border: 2px solid $primary;
+}
+
+thead th {
+  padding: 1em 0.5em;
+  background-color: $primary;
+}
+
+th,
+td {
+  border-style: none;
+  border: none;
+}

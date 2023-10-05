@@ -1,0 +1,33 @@
+<div class="bg-primary">
+  <div class="p-3 cursor-pointer" (click)="isCollapsed = !isCollapsed">
+    <span class="h6 inline-block" [innerText]="title"></span>
+    <p class="h6 m-0 inline-block float-end">
+      <mat-icon
+        aria-hidden="false"
+        aria-label="Expand/Collapse"
+        [fontIcon]="isCollapsed ? 'add' : 'remove'"></mat-icon>
+    </p>
+  </div>
+  <div id="full-region">
+    <div
+      #overlay
+      class="overlay"
+      [ngStyle]="
+        isCollapsed ? { opacity: null } : { opacity: '0', display: 'none' }
+      "></div>
+    <pre
+      #codeRegion
+      class="bg-darker px-2 collapsible"
+      [ngStyle]="
+        isCollapsed
+          ? { 'max-height': null }
+          : { 'max-height': codeRegion.scrollHeight + 'px' }
+      ">
+      <code
+        [highlight]="content"
+        [languages]="languages"
+        [lineNumbers]="lineNumbers">
+      </code>
+    </pre>
+  </div>
+</div>

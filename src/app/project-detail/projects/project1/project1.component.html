@@ -1,0 +1,275 @@
+<div id="inner-project">
+  <!--Documentation Section Start-->
+  <app-section-heading id="specs" title="Specifications"></app-section-heading>
+
+  <p>
+    Welcome to the Specifications section of my Discord bot! Here, you will
+    discover the various capabilities and functionalities that make interacting
+    with the bot a seamless and customizable experience. From configuring the
+    bot's behavior through a user-friendly JSON file to utilizing a wide range
+    of commands and events, this section will provide you with an in-depth
+    understanding of the bot's features. Whether you're looking to host virtual
+    DnD sessions, listen to music with friends, or add a touch of entertainment,
+    my Discord bot offers a versatile set of tools designed to cater to your
+    specific needs.
+  </p>
+
+  <app-subsection-heading
+    id="configs"
+    title="Configuration"></app-subsection-heading>
+
+  <p>
+    With the aim of providing a user-friendly method of customizing my Discord
+    bot, I have offered a simple yet powerful configuration system. By
+    leveraging the flexibility of JSON, users can easily modify and fine-tune
+    the bot's behavior to suit their specific preferences. The JSON
+    configuration file acts as a central hub where various settings, such as
+    default prefixes, default roles for new users, which cogs are active, and
+    more, can be adjusted effortlessly. This intuitive approach to configuration
+    ensures that users have full control over how the bot interacts within their
+    server, allowing for a tailored and personalized experience that aligns
+    perfectly with their needs.
+  </p>
+
+  <app-code-snippet
+    title="Example configs.json"
+    [content]="configs"
+    [languages]="['typescript']"
+    [lineNumbers]="true"></app-code-snippet>
+
+  <app-subsection-heading
+    id="commands"
+    title="Commands"></app-subsection-heading>
+
+  <p>
+    To enhance the modularity and organization of my Discord bot, I have
+    implemented a system of cogs. Cogs serve as self-contained modules that
+    encapsulate specific sets of commands and functionalities, allowing for a
+    more structured and manageable bot design. By separating functionalities
+    into cogs, it becomes easier to add, remove, or modify specific features
+    without affecting the overall structure. This modular approach provides
+    flexibility and maintainability, ensuring that my Discord bot remains
+    adaptable to changing requirements and can easily accommodate new features
+    in the future.
+  </p>
+
+  <app-subsubsection-heading
+    id="music"
+    title="Music Cog"></app-subsubsection-heading>
+  <app-command-list [commands]="music_commands"></app-command-list>
+
+  <app-subsubsection-heading
+    id="dnd"
+    title="DnD Cog"></app-subsubsection-heading>
+  <app-command-list [commands]="dnd_commands"></app-command-list>
+
+  <app-subsubsection-heading
+    id="misc"
+    title="Misc Cog"></app-subsubsection-heading>
+  <app-command-list [commands]="misc_commands"></app-command-list>
+
+  <app-subsection-heading id="events" title="Events"></app-subsection-heading>
+
+  <p>
+    My Discord bot has two primary events that it watches for:
+    <code>onUserJoin</code> and <code>onCommand</code>
+  </p>
+
+  <app-subsubsection-heading
+    id="onUserJoin"
+    title="onUserJoin"></app-subsubsection-heading>
+
+  <p>
+    One of the key functionalities of my Discord bot is its ability to monitor
+    the server for new users joining and automatically assigns a specific role
+    to them. This feature was developed to save time and effort for server
+    administrators and ensure that every new member receives the appropriate
+    role upon joining. By keeping a watchful eye on the server, the bot swiftly
+    identifies new users and assigns them the designated role. With this
+    automated role assignment, my Discord bot contributes to creating a seamless
+    and welcoming experience for newcomers, facilitating their integration into
+    the community.
+  </p>
+
+  <app-subsubsection-heading
+    id="onCommand"
+    title="onCommand"></app-subsubsection-heading>
+
+  <p>
+    A unique and entertaining aspect of my Discord bot is its ability to deliver
+    playful and light-hearted insults to users, as requested by server
+    administrators. With a 1 in 10,000 chance, the bot surprises users with
+    humorous and harmless insults, injecting a fun and playful atmosphere into
+    the server. This feature adds an element of unpredictability and laughter
+    which brings a touch of levity to the server environment, making
+    interactions more enjoyable for everyone involved.
+  </p>
+  <!--Documentation Section End-->
+
+  <!--Specifications Section Start-->
+  <app-section-heading
+    id="design-challenges"
+    title="Design Challenges"></app-section-heading>
+
+  <p>
+    Creating a bot that interacts seamlessly with the Discord API requires
+    careful consideration of various aspects, from choosing the right
+    programming language and framework to addressing specific functionality
+    requirements. In this section, I will share my experiences, solutions, and
+    insights gained throughout the development process.
+  </p>
+
+  <app-subsection-heading
+    id="discord.py"
+    title="Discord.py"></app-subsection-heading>
+
+  <p>
+    The first challenge which needed to be solved was the problem of how my bot
+    should interact with the Discord API. Essentially, I had two primary
+    choices: <code>discord.py</code> or <code>discord.js</code>.
+  </p>
+
+  <p>
+    While I acknowledge the advantages of asynchronous programming in
+    JavaScript, I made the deliberate choice to leverage my existing knowledge
+    and experience in Python, allowing me to quickly develop and iterate on my
+    Discord bot. This decision enabled me to focus on the core features and
+    functionality, resulting in a more streamlined development process.
+  </p>
+
+  <app-subsubsection-heading
+    id="discordpy2"
+    title="Discord.py v2.0 Migration"></app-subsubsection-heading>
+
+  <p>
+    Initially, I used <code>bot_commands</code> in
+    <code>discord.py v1.0</code> to implement the commands. However, with the
+    release of <code>discord.py v2.0</code>, I decided to begin migrating to use
+    <code>app_commands</code>. Application commands offer several benefits,
+    including increased stability and better integration with the Discord API.
+    However, the migration process is still in progress as I have not yet
+    migrated the Music cog.
+  </p>
+
+  <app-subsection-heading
+    id="youtube-dl"
+    title="YoutubeDL"></app-subsection-heading>
+
+  <p>
+    Once I had decided on using <code>discord.py</code> the next primary
+    challenge was understanding how to play audio in a voice channel. Luckily, I
+    had a strong starting point and I began reading through the original code to
+    understand how it works.
+  </p>
+
+  <app-subsection-heading
+    id="server"
+    title="Running 24/7"></app-subsection-heading>
+
+  <p>
+    One of the design challenges I encountered while developing my Discord bot
+    was ensuring that it could run continuously without the need for my personal
+    laptop to be turned on. Hosting the bot on a reliable server was the key to
+    achieving this goal. After careful consideration, I decided to utilize an
+    AWS micro EC2 instance as my hosting solution.
+  </p>
+
+  <p>
+    By leveraging an AWS EC2 instance, I could take advantage of its
+    cost-effective pricing model while ensuring a stable and uninterrupted
+    experience for users. The micro EC2 instance provided the necessary
+    computing power to run the bot 24/7, allowing users to interact with it at
+    any time.
+  </p>
+
+  <app-subsection-heading
+    id="hosting"
+    title="EC2 Hosting"></app-subsection-heading>
+
+  <p>
+    While hosting my Discord bot on a micro EC2 instance brings numerous
+    benefits, there are some challenges involved in setting up and maintaining
+    the instance, such as ensuring the server has enough resources to handle to
+    bot's tasks and managing server costs.
+  </p>
+
+  <app-subsubsection-heading
+    id="lazy-loading"
+    title="Lazy Loading"></app-subsubsection-heading>
+
+  <p>
+    One notable issue with running the bot on such a small server was storage
+    capacity. Essentially, whenever a user would attempt to load a playlist with
+    over ~20 songs in it, <code>youtubeDL</code> would need to download all of
+    those songs before they could be added to the queue. At best, this would
+    cause the bot to timeout and leave the VC, at worst this would cause the
+    server to run out of available memory and crash.
+  </p>
+
+  <p>
+    My solution to this was to implement a form of lazy loading. This involved
+    storing the songs in the queue as coroutines which could later be run to
+    download the audio source. This allowed the bot to queue up playlists of
+    100s of songs while only using the memory it absolutely needed when running.
+    Additionally, I added another task loop to the queue which loads some of the
+    songs preemptively. This allows for the bot to take advantage of some of the
+    available memory to reduce the delay in playing the songs and allows the
+    <code>!queue</code> command to have a cleaner output.
+  </p>
+
+  <app-subsection-heading
+    id="url"
+    title="URL Conversion"></app-subsection-heading>
+
+  <app-figure-wrapper>
+    <app-figure title="All URL patterns that can be used with the bot.">
+      <ul>
+        <li>youtube.com/watch?v=&lt;id></li>
+        <li>youtube.com/shorts/&lt;id></li>
+        <li>youtube.com/playlist?list=&lt;id></li>
+        <li>youtu.be/&lt;id></li>
+        <li>open.spotify.com/track/&lt;id></li>
+        <li>open.spotify.com/playlist/&lt;id></li>
+        <li>open.spotify.com/album/&lt;id></li>
+      </ul>
+    </app-figure>
+
+    <p>
+      Originally the bot's <code>!play</code> command only supported search
+      queries and standard YouTube video URLs. However, once I had implemented
+      the ability to load YouTube playlists, some users would attempt to load
+      their Spotify playlists into the bot. This would typically result in the
+      bot crashing as <code>youtubeDL</code> could not properly parse the
+      response from non-YouTube URLs.
+    </p>
+
+    <p>
+      To account for this, I began detecting when someone would use a Spotify
+      URL and, using the Spotify API, I would convert the URL into a search
+      query of the form: "&lt;Title> by &lt;Artist> lyrics". This search query
+      would be properly handled by <code>youtubeDL</code> most of the time (less
+      popular artists, short titles, and non-descript names can result in the
+      wrong video playing but it is fairly uncommon).
+    </p>
+
+    <p>
+      Additionally, I noticed that my approach to detecting and handling these
+      URL conversions could be expanded to allow for using some less
+      traditional, but still valid, YouTube URLs. These include URLs for YouTube
+      playlists and shorts.
+    </p>
+  </app-figure-wrapper>
+  <!--Specifications Section End-->
+
+  <!--Credits Section Start-->
+  <app-section-heading id="credits" title="Credits"></app-section-heading>
+
+  <p>
+    Huge thanks to Valentin B. (vbe0201 on GitHub) for creating the
+    <a href="https://gist.github.com/vbe0201/ade9b80f2d3b64643d854938d40a0a2d"
+      >original music Discord bot</a
+    >
+    which became the foundation of my Music cog.
+  </p>
+  <!--Credits Section End-->
+</div>

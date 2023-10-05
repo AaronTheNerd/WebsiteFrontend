@@ -1,0 +1,56 @@
+<h1>The <span class="text-accent">I am...</span> Word Search</h1>
+<small class="text-accent">(There may or may not be Easter eggs)</small>
+<div class="row word-search-wrapper">
+  <div class="col-auto px-0">
+    <div
+      *ngFor="let line of puzzle; let y = index"
+      style="height: {{ lineHeight }}px; position: relative;">
+      <span
+        *ngFor="let char of line; let x = index"
+        id="char-{{ x }}-{{ y }}"
+        class="h6 bg-light text-black text-center align-baseline border user-select-none"
+        [ngStyle]="{ width: lineHeight + 'px', height: lineHeight + 'px' }"
+        [innerText]="char">
+      </span>
+      <span
+        *ngFor="let char of line; let x = index"
+        id="target-{{ x }}-{{ y }}"
+        class="tall user-select-none"
+        [ngStyle]="{
+          'width.px': lineHeight,
+          'height.px': lineHeight,
+          'top.px': 0,
+          'left.px': lineHeight * x
+        }"
+        (mousedown)="startDrag(x, y)"
+        (mouseup)="endDrag(x, y)"
+        (mouseover)="enterDrag(x, y)">
+      </span>
+    </div>
+  </div>
+  <div id="word-bank" class="col-auto">
+    <div
+      *ngFor="let word of displayBank()"
+      class="word-bank-word"
+      [ngClass]="word.found ? 'text-decoration-line-through' : ''"
+      [innerText]="word.answer"></div>
+  </div>
+</div>
+
+<div id="highlights">
+  <div
+    *ngFor="let word of answers"
+    class="highlight"
+    [ngStyle]="
+      word.found ? drawLine(word.start, word.end) : { display: 'none' }
+    "
+    (window:resize)="
+      word.found ? drawLine(word.start, word.end) : { display: 'none' }
+    "
+    [ngClass]="word.egg ? 'easter-egg' : null"></div>
+</div>
+
+<div
+  id="current-highlight"
+  class="highlight d-none"
+  [ngStyle]="drawLine(start, end)"></div>
