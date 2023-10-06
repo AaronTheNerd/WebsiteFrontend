@@ -13,13 +13,12 @@ type ProjectModel @model @auth(rules: [{allow: public}]) {
   id: ID!
   title: String!
   school: Boolean!
-  languages: [LanguageEnum]
+  languages: [LanguageEnum!]!
   description: String!
   content: AWSJSON!
-  tags: [String]
-  modified: AWSDateTime!
-  created: AWSDateTime!
+  tags: [String!]
   gitLink: String
-  thumbnails: [String]
+  thumbnails: [String!]
   favorite: Boolean
 }
+ 

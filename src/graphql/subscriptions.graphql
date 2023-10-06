@@ -1,0 +1,61 @@
+# this is an auto generated file. This will be overwritten
+
+subscription OnCreateProjectModel(
+  $filter: ModelSubscriptionProjectModelFilterInput
+) {
+  onCreateProjectModel(filter: $filter) {
+    id
+    title
+    school
+    languages
+    description
+    content
+    tags
+    gitLink
+    thumbnails
+    favorite
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnUpdateProjectModel(
+  $filter: ModelSubscriptionProjectModelFilterInput
+) {
+  onUpdateProjectModel(filter: $filter) {
+    id
+    title
+    school
+    languages
+    description
+    content
+    tags
+    gitLink
+    thumbnails
+    favorite
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+subscription OnDeleteProjectModel(
+  $filter: ModelSubscriptionProjectModelFilterInput
+) {
+  onDeleteProjectModel(filter: $filter) {
+    id
+    title
+    school
+    languages
+    description
+    content
+    tags
+    gitLink
+    thumbnails
+    favorite
+    createdAt
+    updatedAt
+    __typename
+  }
+}

@@ -1,0 +1,64 @@
+# this is an auto generated file. This will be overwritten
+
+mutation CreateProjectModel(
+  $input: CreateProjectModelInput!
+  $condition: ModelProjectModelConditionInput
+) {
+  createProjectModel(input: $input, condition: $condition) {
+    id
+    title
+    school
+    languages
+    description
+    content
+    tags
+    gitLink
+    thumbnails
+    favorite
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation UpdateProjectModel(
+  $input: UpdateProjectModelInput!
+  $condition: ModelProjectModelConditionInput
+) {
+  updateProjectModel(input: $input, condition: $condition) {
+    id
+    title
+    school
+    languages
+    description
+    content
+    tags
+    gitLink
+    thumbnails
+    favorite
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+mutation DeleteProjectModel(
+  $input: DeleteProjectModelInput!
+  $condition: ModelProjectModelConditionInput
+) {
+  deleteProjectModel(input: $input, condition: $condition) {
+    id
+    title
+    school
+    languages
+    description
+    content
+    tags
+    gitLink
+    thumbnails
+    favorite
+    createdAt
+    updatedAt
+    __typename
+  }
+}

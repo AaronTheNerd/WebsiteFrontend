@@ -1,0 +1,45 @@
+# this is an auto generated file. This will be overwritten
+
+query GetProjectModel($id: ID!) {
+  getProjectModel(id: $id) {
+    id
+    title
+    school
+    languages
+    description
+    content
+    tags
+    gitLink
+    thumbnails
+    favorite
+    createdAt
+    updatedAt
+    __typename
+  }
+}
+
+query ListProjectModels(
+  $filter: ModelProjectModelFilterInput
+  $limit: Int
+  $nextToken: String
+) {
+  listProjectModels(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    items {
+      id
+      title
+      school
+      languages
+      description
+      content
+      tags
+      gitLink
+      thumbnails
+      favorite
+      createdAt
+      updatedAt
+      __typename
+    }
+    nextToken
+    __typename
+  }
+}
