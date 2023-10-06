@@ -103,12 +103,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   providers: [
     {
       provide: HIGHLIGHT_OPTIONS,
-      useValue: <HighlightOptions>{
+      useValue:{
         coreLibraryLoader: () => import("highlight.js/lib/core"),
-        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-        // @ts-ignore
-        lineNumbersLoader: () => import("highlightjs-line-numbers.js"),
-        themePath: "node_modules/highlight.js/styles/github.css",
+        lineNumbersLoader: () => import("ngx-highlightjs/line-numbers"),
+        themePath: "../assets/styles/oneDarkProDarker.css",
         languages: {
           typescript: () => import("highlight.js/lib/languages/typescript"),
           json: () => import("highlight.js/lib/languages/json"),

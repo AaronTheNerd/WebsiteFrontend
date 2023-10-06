@@ -17,6 +17,5 @@ export class CodeSnippetComponent {
   isCollapsed = true;
 
   constructor(private hljsLoader: HighlightLoader) {
-    this.hljsLoader.setTheme(theme);
   }
 }
